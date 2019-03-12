@@ -6,9 +6,7 @@ body{
 .card {
   position: relative;
   text-align: center;
-  
-  
-  margin: auto;
+  padding-right: 10px;
   
 }
 .centered {
@@ -17,10 +15,37 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
-  font-size: 10em;
+  font-size: 3em;
 }
 
 img{
-    width: 277px;
-    border-radius: 18px;
+    border-radius: 9px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  /*background-color: DodgerBlue;*/
+}
+/*.flex-container > div {*/
+/*  background-color: #f1f1f1;*/
+/*  width: 100px;*/
+/*  margin: 10px;*/
+/*  text-align: center;*/
+/*}*/
+.dataEntry{
+   display: flex;
+   align-items: baseline;
+}
+#numberOfCards{
+  width: 50px;
+  text-align: center;
+}
+
+button{
+  margin: 5px;
+}
+
+#numberOfCards{
+  margin: 5px;
 }

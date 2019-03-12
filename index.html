@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Random Card Generator</title>
+        <title> Sorting Cards With Bubble</title>
         <link rel="stylesheet" href="/myStyle.css" type="text/css" />
         
     </head>
-    <body onload="dealFunction()">
-    <div class = "card">
-        <img src=""></img>
-        <div class="centered">
-        	<p id="texto"></p>
+    <!--<body onload="dealFunction()">-->
+     <body>
+         
+     <div class="dataEntry">
+         <div>
+             <h2> Enter Number of Cards to Sort (2-13):</h2>
         </div>
-        
+        <div>
+             <input id="numberOfCards" type="text" name="numCards"/>
+        </div>
+        <div> 
+            <button onclick="dealFunction()" id="newCards">Deal New Cards</button>
+        </div>
+     </div>
+    
+    <div class="flex-container" id="contenedor">  
+    
+        <div class = "card">
+            <img class="fondo" src=""></img>
+            <div class="centered"> </div>
+        </div>
+    
     </div>
 
-
+   
+    
 	<script src="/index.js"></script>
     </body>
 </html>
