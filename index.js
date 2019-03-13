@@ -1,16 +1,13 @@
 // JavaScript File
 
-function dealFunction() {
-  
-  let cardsArray = [];
-  let sutesArray = [];
+ let dealFunction = () => {
   
   // Disable button after click
   
-     document.getElementById("newCards").onclick = function() {
-    //disable
-    this.disabled = true;
-     };
+    // document.getElementById("newCards").onclick = function() {
+    // //disable
+    // this.disabled = true;
+    // };
   
   // Read value from the input
     let inputtxt = document.querySelector("#numberOfCards").value;
@@ -25,18 +22,25 @@ function dealFunction() {
     }
     
     // console.log("rango=" + rango);
+    let validEntry = false;
       
     if (rango===false || textInput===true) {
       alert("Please enter a number between 2 and 13");
-        window.location.reload();  
-        return;
-     } else {
-      let validEntry = true;
+      window.location.reload();  
+      return;
+    } else {
+      
+      validEntry =true;
       // console.log("valid entry:" + validEntry );
     }
     
+    // if ( validEntry === true) {
+    //   window.location.reload();  
+    // }
+    
     //create the divs based on the amount of cards entered
     for (var i=0; i<inputtxt-1; i++) {
+      
       const sourceElement = document.querySelector('.card');
       const destination = document.querySelector('.flex-container');
 
@@ -44,6 +48,11 @@ function dealFunction() {
       destination.appendChild(copy);
     }
     
+  // create the arrays that will be used by the sorting algoritm
+  
+  let cardsArray = [];
+  let sutesArray = [];
+  
   // generate random values
   let divs = document.querySelectorAll(".card");
     // console.log(divs);
@@ -55,12 +64,9 @@ function dealFunction() {
     // console.log(sutesRand);
     sutesArray.push(sutesRand);
     
-
     let valueRand = Math.floor(Math.random() * 13) + 1;
     // console.log(valueRand);
     cardsArray.push(valueRand);
-    
-    
     
   // assign the face of the card based on a random value
     switch (sutesRand) {
@@ -96,19 +102,18 @@ function dealFunction() {
   }
   // console.log("sutes Array= " + sutesArray);
   // console.log("Cards Array =" + cardsArray);
-  return [sutesArray, cardsArray];
-}
-
-let dealArrays = dealFunction();
-let sutesArray = dealArrays[0];
-let cardsArray = dealArrays[1];
-
-  console.log("sutes Array= " + sutesArray);
-  console.log("Cards Array =" + cardsArray);
+  let result = [sutesArray, cardsArray];
+  return result;
+};
 
 
+let cosas = dealFunction;
+ console.log(cosas[0]);
 
-
+//let sutesArray = dealArrays[0];
+//let cardsArray = dealArrays[1];
+// console.log("sutes Array= " + sutesArray);
+// console.log("Cards Array =" + cardsArray);
 
 
 
