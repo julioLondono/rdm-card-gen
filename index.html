@@ -5,9 +5,9 @@
         <link rel="stylesheet" href="/myStyle.css" type="text/css" />
         
     </head>
-    <!--<body onload="dealFunction()">-->
+   
      <body>
-         
+    
      <div class="dataEntry">
          <div>
              <h2> Enter Number of Cards to Sort (2-13):</h2>
@@ -15,10 +15,23 @@
         <div>
              <input id="numberOfCards" type="text" name="numCards"/>
         </div>
+        
         <div> 
-            <button onclick= "dealFunction()" id="newCards">Deal New Cards</button>
+            <button id="newCards">Deal New Cards</button>
         </div>
      </div>
+     
+    <div>
+        <p hidden id='result'></p>
+    </div>
+    <div>
+        <p hidden id='faces'></p>
+    </div>
+    <div>
+        <p hidden id='numbers'></p>
+    </div>
+    
+    
     
     <div class="flex-container" id="contenedor">  
     
@@ -29,8 +42,7 @@
     
     </div>
 
-   
-    
 	<script src="/index.js"></script>
+	
     </body>
 </html>
