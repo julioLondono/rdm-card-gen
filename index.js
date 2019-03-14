@@ -2,9 +2,7 @@
 
 
 /////// Esta funcion verifica que el valor entrado es un numero y esta dentro del rango y lo almacena en el HTML///////////////////
-
 document.getElementById("newCards").addEventListener("click", handleInput);
-
 function handleInput() {
   let inputValue = document.querySelector("#numberOfCards").value;
   // console.log("inputValue=" + inputValue);
@@ -38,15 +36,8 @@ function handleInput() {
       }
 }
 
-
 //////// Esta funcion lee la cantidad de cartas y crea los divs en el dom con valores aleatorios///////////////////////////////////////
-// document.getElementById("newCards").addEventListener("click", dealFunction);
-
 function dealFunction(inputtxt) {
-
-  // let inputtxt = document.querySelector("#numberOfCards").value;
-  console.log("captura de result=" + inputtxt);
-  
 //create the divs based on the amount of cards entered
   for (var i=0; i<inputtxt-1; i++) {
       
@@ -109,22 +100,49 @@ function dealFunction(inputtxt) {
       divs[i].querySelector(".centered").innerHTML = valueRand;
     }
   }
-  
+  document.getElementById("newCards").disabled = true;
   return [sutesArray, cardsArray];
-}
+} ///// End of Function//////
 
 
-let faces =[];
-let valores = [];
-
-document.getElementById("newCards").addEventListener("click", function(){
+document.getElementById("newCards").addEventListener("click", createCards);
+  function createCards(){
   let inputtxt = document.querySelector("#numberOfCards").value;
-  let dealArrays = dealFunction(inputtxt);
-  let faces =dealArrays[0];
-  let valores = dealArrays[1];
-  console.log(faces);
-  console.log(valores);
-});
+  let dealArrays = dealFunction(inputtxt); ///// Call function with parameter inputtxt
+  // let faces =dealArrays[0];
+  // let valores = dealArrays[1];
+  // return [faces, valores];
+  // console.log("Faces=" + faces);
+  // console.log("Valorees=" + valores);
+};
  
+////////////////// Sorting Cards///////////////////////////////////////////////
 
+document.getElementById("sortButton").addEventListener("click", sortArray);
 
+function sortArray(){
+  
+  let arrays = dealFunction();
+  let faces = arrays[0];
+  let valores = arrays[1];
+    console.log("Faces=" + faces);
+  console.log("Valorees=" + valores);
+
+  let newValoresArray=[];
+  let first= null;
+  let second = null;
+  let n = valores.length;
+
+  for(var j=0; j<(n-1) ; j++) {
+      for(var i =0; i<(n-1); i++) {
+        if (valores[i]>valores[i+1]) {
+            first= valores[i];
+              second= valores[i+1];
+              valores[i]=second;
+              valores[i+1]=first;
+              newValoresArray=valores;
+            console.log(newValoresArray);
+        }
+      }
+  }
+} /// fin de la funcion
