@@ -105,44 +105,49 @@ function dealFunction(inputtxt) {
 } ///// End of Function//////
 
 
-document.getElementById("newCards").addEventListener("click", createCards);
-  function createCards(){
+let arraysInAVariable = function() {
   let inputtxt = document.querySelector("#numberOfCards").value;
   let dealArrays = dealFunction(inputtxt); ///// Call function with parameter inputtxt
-  // let faces =dealArrays[0];
-  // let valores = dealArrays[1];
-  // return [faces, valores];
+  let faces =dealArrays[0];
+  let valores = dealArrays[1];
   // console.log("Faces=" + faces);
-  // console.log("Valorees=" + valores);
-};
- 
-////////////////// Sorting Cards///////////////////////////////////////////////
-
-document.getElementById("sortButton").addEventListener("click", sortArray);
-
-function sortArray(){
+  // console.log("Valores=" + valores);
+  return [faces, valores];
+  };
   
-  let arrays = dealFunction();
+  let arrays = arraysInAVariable();
   let faces = arrays[0];
   let valores = arrays[1];
     console.log("Faces=" + faces);
-  console.log("Valorees=" + valores);
+    console.log("Valorees=" + valores);
+  
+ 
+////////////////// Sorting Cards////////////////////////////////////////////////////////
 
-  let newValoresArray=[];
-  let first= null;
-  let second = null;
-  let n = valores.length;
+// document.getElementById("sortButton").addEventListener("click", sortArray);
+// function sortArray(){
+  
+//   let arrays = createCards();
+//   let faces = arrays[0];
+//   let valores = arrays[1];
+//     console.log("Faces=" + faces);
+//     console.log("Valorees=" + valores);
 
-  for(var j=0; j<(n-1) ; j++) {
-      for(var i =0; i<(n-1); i++) {
-        if (valores[i]>valores[i+1]) {
-            first= valores[i];
-              second= valores[i+1];
-              valores[i]=second;
-              valores[i+1]=first;
-              newValoresArray=valores;
-            console.log(newValoresArray);
-        }
-      }
-  }
-} /// fin de la funcion
+//   let newValoresArray=[];
+//   let first= null;
+//   let second = null;
+//   let n = valores.length;
+
+//   for(var j=0; j<(n-1) ; j++) {
+//       for(var i =0; i<(n-1); i++) {
+//         if (valores[i]>valores[i+1]) {
+//             first= valores[i];
+//               second= valores[i+1];
+//               valores[i]=second;
+//               valores[i+1]=first;
+//               newValoresArray=valores;
+//             console.log(newValoresArray);
+//         }
+//       }
+//   }
+// } ///////// fin de la funcion
