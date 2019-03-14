@@ -40,16 +40,11 @@ function handleInput() {
 
 
 //////// Esta funcion lee la cantidad de cartas y crea los divs en el dom con valores aleatorios///////////////////////////////////////
-document.getElementById("newCards").addEventListener("click", dealFunction);
+// document.getElementById("newCards").addEventListener("click", dealFunction);
 
-function dealFunction() {
-  
-//   //borra las cartas que hayan sido crerada en un click anterior
-//   while (document.querySelector('.flex-container').hasChildNodes()) {
-//     document.querySelector('.flex-container').removeChild(document.querySelector('.flex-container').lastChild);
-// }
-  
-  let inputtxt = document.querySelector("#numberOfCards").value;
+function dealFunction(inputtxt) {
+
+  // let inputtxt = document.querySelector("#numberOfCards").value;
   console.log("captura de result=" + inputtxt);
   
 //create the divs based on the amount of cards entered
@@ -67,7 +62,7 @@ function dealFunction() {
   let cardsArray = [];
   let sutesArray = [];
   
-// generate random values
+// generate random values and push them into the array
   let divs = document.querySelectorAll(".card");
     // console.log(divs);
 
@@ -90,10 +85,10 @@ function dealFunction() {
       case 2:
         divs[i].querySelector(".fondo").src = "/resources/images/heartsSmall.jpg";
         break;
-        case 3:
+      case 3:
         divs[i].querySelector(".fondo").src = "/resources/images/picaSmall.jpg";
         break;
-        case 4:
+      case 4:
         divs[i].querySelector(".fondo").src = "/resources/images/trebolSmall.jpg";
         break;
       default:
@@ -114,27 +109,22 @@ function dealFunction() {
       divs[i].querySelector(".centered").innerHTML = valueRand;
     }
   }
-  document.getElementById("faces").innerHTML = sutesArray;
-  document.getElementById("numbers").innerHTML = cardsArray;
-  // console.log("sutes Array= " + sutesArray);
-  // console.log("Cards Array =" + cardsArray);
+  
   return [sutesArray, cardsArray];
 }
 
-let sutesArray = document.getElementById("faces").innerHTML.value;
-console.log("sutesArray=" + sutesArray);
 
-let cardsArray = document.getElementById("numbers").innerHTML.value;
-console.log("CardsArray=" + cardsArray);
+let faces =[];
+let valores = [];
 
-
-
-
-// let dealArrays = dealFunction();
-// let faces =dealArrays[0]
-// let valores = dealArrays[1];
-// console.log(dealArrays);
-// console.log(faces);
-// console.log(valores);
+document.getElementById("newCards").addEventListener("click", function(){
+  let inputtxt = document.querySelector("#numberOfCards").value;
+  let dealArrays = dealFunction(inputtxt);
+  let faces =dealArrays[0];
+  let valores = dealArrays[1];
+  console.log(faces);
+  console.log(valores);
+});
+ 
 
 
