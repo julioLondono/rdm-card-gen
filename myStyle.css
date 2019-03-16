@@ -1,22 +1,47 @@
 body{
-    background-color: green;
+  background-color: green;
 }
-
-
-.card {
+.card{
   position: relative;
-  text-align: center;
-  
-}
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  font-size: 10em;
+  border-radius: 4%;
+  background-color: white;
+  height: 250px;
+  width: 200px;
+  margin: auto;
 }
 
-img{
-    border-radius: 18px;
+/* div::after {
+  content: &clubs;;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+div::before {
+  content: &spades;;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+} */
+.value {
+  position: absolute;
+  left: 0;
+  top: -12%;
+  width: 100%;
+  text-align: center;
+  font-size: 6em;
+}
+.nw {
+  position: absolute;
+  top: -30%;
+  left: 3%;
+  font-size: 4em;
+}
+.se {
+  position: absolute;
+  bottom: -30%;
+  right: 3%;
+  font-size: 4em;
+  transform:rotate(180deg);
 }
