@@ -7,9 +7,6 @@ body{
   position: relative;
   text-align: center;
   
-  
-  margin: auto;
-  
 }
 .centered {
   position: absolute;
@@ -21,6 +18,5 @@ body{
 }
 
 img{
-    width: 277px;
     border-radius: 18px;
 }
