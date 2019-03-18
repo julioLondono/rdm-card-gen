@@ -8,22 +8,8 @@ body{
   height: 250px;
   width: 200px;
   margin: auto;
+  font-size: 15px;
 }
-
-/* div::after {
-  content: &clubs;;
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 18px;
-}
-div::before {
-  content: &spades;;
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-} */
 .value {
   position: absolute;
   left: 0;
